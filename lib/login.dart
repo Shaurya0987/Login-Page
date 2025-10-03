@@ -34,7 +34,7 @@ class _MinimalLoginPageState extends State<MinimalLoginPage> {
               "Create new\nAccount",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 50,
                 fontFamily: 'Inspiration',
                 color: Colors.orange[200],
                 fontWeight: FontWeight.w500,
@@ -48,7 +48,7 @@ class _MinimalLoginPageState extends State<MinimalLoginPage> {
                 prefixIcon: Icon(Icons.person, color: Colors.orange[200]),
                 hintText: "Your Name",
                 hintStyle: TextStyle(
-                  color: const Color.fromARGB(255, 212, 171, 108),
+                  color: Colors.orange.shade200,
                 ),
                 filled: true,
                 fillColor: Colors.white24,

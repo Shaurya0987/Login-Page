@@ -1,3 +1,4 @@
+import 'package:bdver/homePage.dart';
 import 'package:bdver/login.dart'; // for MinimalLoginPage
 import 'package:flutter/material.dart';
 
@@ -111,7 +112,7 @@ class _CheckLoginState extends State<CheckLogin> {
 
                 TextButton(
                   onPressed: () {
-                    // Forgot password action
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()));
                   },
                   child: const Text(
                     "Forget Password?",
