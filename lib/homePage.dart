@@ -1,3 +1,6 @@
+import 'package:bdver/appointmentPage.dart';
+import 'package:bdver/doctorPage.dart';
+import 'package:bdver/profilePage.dart';
 import 'package:flutter/material.dart';
 
 // --- This is now the main screen of your app ---
@@ -75,7 +78,7 @@ class HomeTabPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Data lists moved inside the build method for better organization
-    final List<Map<String, dynamic>> _items = [
+    final List<Map<String, dynamic>> items = [
       {'icon': Icons.medical_services_outlined, 'label': 'Consultation'},
       {'icon': Icons.health_and_safety_outlined, 'label': 'Dentist'},
       {'icon': Icons.favorite_border, 'label': 'Cardiologist'},
@@ -84,7 +87,7 @@ class HomeTabPage extends StatelessWidget {
       {'icon': Icons.bloodtype_outlined, 'label': 'Labs'},
     ];
 
-    final List<Map<String, dynamic>> _doctors = [
+    final List<Map<String, dynamic>> doctors = [
       {
         'imagePath': 'https://picsum.photos/id/237/200',
         'name': 'Dr. Aliyah Khan',
@@ -105,7 +108,7 @@ class HomeTabPage extends StatelessWidget {
       },
     ];
 
-    final TextEditingController _searchController = TextEditingController();
+    final TextEditingController searchController = TextEditingController();
 
     return SingleChildScrollView(
       child: Padding(
@@ -142,7 +145,7 @@ class HomeTabPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextField(
-              controller: _searchController,
+              controller: searchController,
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 hintText: "Search for doctor",
@@ -179,7 +182,7 @@ class HomeTabPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             GridView.builder(
-              itemCount: _items.length,
+              itemCount: items.length,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -190,8 +193,8 @@ class HomeTabPage extends StatelessWidget {
               ),
               itemBuilder: (context, index) {
                 return CategoryCard(
-                  icon: _items[index]['icon'],
-                  label: _items[index]['label'],
+                  icon: items[index]['icon'],
+                  label: items[index]['label'],
                 );
               },
             ),
@@ -206,7 +209,7 @@ class HomeTabPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Column(
-              children: _doctors.map((doctor) {
+              children: doctors.map((doctor) {
                 return DoctorCard(
                   imagePath: doctor['imagePath'],
                   name: doctor['name'],
@@ -222,45 +225,6 @@ class HomeTabPage extends StatelessWidget {
   }
 }
 
-// --- Placeholder Pages ---
-class DoctorsPage extends StatelessWidget {
-  const DoctorsPage({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        "Doctors Page",
-        style: TextStyle(color: Colors.white, fontSize: 24),
-      ),
-    );
-  }
-}
-
-class AppointmentsPage extends StatelessWidget {
-  const AppointmentsPage({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        "Appointments Page",
-        style: TextStyle(color: Colors.white, fontSize: 24),
-      ),
-    );
-  }
-}
-
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        "Profile Page",
-        style: TextStyle(color: Colors.white, fontSize: 24),
-      ),
-    );
-  }
-}
 
 // --- Reusable Card Widgets ---
 class CategoryCard extends StatelessWidget {

@@ -1,4 +1,5 @@
-import 'package:bdver/homePage.dart';
+import 'package:bdver/appointmentPage.dart';
+import 'package:bdver/doctorPage.dart';
 import 'package:bdver/splashScreen.dart';
 import 'package:flutter/material.dart';
 // MinimalLoginPage
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(), 
+      home: AppointmentsPage(), 
     );
   }
 }
